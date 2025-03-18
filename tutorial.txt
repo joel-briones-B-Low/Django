@@ -1,0 +1,20 @@
+instalar django
+
+
+esto lo que hace es crear la carpeta nombre para poder crear el proyecto ->
+django-admin startproject --nombre-- .
+
+
+para crear la sqllite3 (por defecto django usa esta) ->
+python manage.py migrate
+
+correr el servidor por defecto de python (no es muy recomendable usar ese servidor
+porque no es muy seguro y ademas no admite mucha carga de trabajo) en el puerto ->
+python manage.py runserver 8080
+
+ver la lista de comandos de django
+python manage.py --help
+
+
+crear la aplicacion ->
+python manage.py startapp nombre_aplicacion
