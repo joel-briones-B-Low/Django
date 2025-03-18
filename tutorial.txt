@@ -11,6 +11,7 @@ esto crea las migraciones para la base de datos->
 para crear la sqllite3 (por defecto django usa esta) ->
 python manage.py migrate
 
+
 correr el servidor por defecto de python (no es muy recomendable usar ese servidor
 porque no es muy seguro y ademas no admite mucha carga de trabajo) en el puerto ->
 python manage.py runserver 8080
@@ -21,3 +22,27 @@ python manage.py --help
 
 crear la aplicacion ->
 python manage.py startapp nombre_aplicacion
+
+
+py manage.py shell
+
+el shell de django es poder ejecutar comandos
+pero desde la consola del mismo project, eso nos
+a hacer pruebas de inserciones, modificacions de una manera mas rapida
+sin usar el UX
+
+
+from myapp.models import Project, Task
+
+p = Project('app movil') -- da error, debes definir los parametros a usar con sus valores
+p.save() -- guarda el objeto en la bada
+p = Project(nombre='app movil') -- instacia el objeto a la variable p
+Project.objects.get(id=1) -- select especifico los objetos Project
+Project.objects.get(nombre='app web') 
+p = Project.objects.get(id=1) -- elegir un referencia al objeto
+p.task_set.create(titulo='crear visa') -- crear una tarea relacionada con el projecto previamente elegido
+p.task_set.get(id=1) -- traer las tareas del objeto que tengan esa id
+p.task_set.all() -- traer las tareas del objeto padre
+
+Project.objects.filter(nombre__startswith='app')     -- filtrar nombre empieza con
+
