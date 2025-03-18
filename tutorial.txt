@@ -5,6 +5,9 @@ esto lo que hace es crear la carpeta nombre para poder crear el proyecto ->
 django-admin startproject --nombre-- .
 
 
+esto crea las migraciones para la base de datos->
+ py .\manage.py makemigrations
+
 para crear la sqllite3 (por defecto django usa esta) ->
 python manage.py migrate
 
