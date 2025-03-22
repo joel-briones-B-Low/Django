@@ -1,5 +1,20 @@
+{%extends 'plantilla.html'%}
+
+{%block contenido%}
+
 {% for usuario in usuario%}
 <h2>
+    {# esto es un comentario de jinja #}
+    {%if usuario.nombre_usuario == 'joel123'%}
+    <div style=" background-color: red;">
+        <h2 style="font-size: x-large; color: white;">
+            {{usuario.nombre_usuario}}
+        </h2>
+    </div>
+    {%endif%}
     {{usuario.nombre_usuario}}
 </h2>
 {%endfor%}
+
+
+{%endblock%}
