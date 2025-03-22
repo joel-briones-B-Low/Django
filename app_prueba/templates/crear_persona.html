@@ -1,0 +1,9 @@
+<h1>crear nueva Persona</h1>
+
+
+{# el as_etiqueta sirve para colocar cada input en una etiqueta #}
+<form action="" , method="POST">
+    {%csrf_token%}
+    {{form.as_div}}
+    <button>Guardar</button>
+</form>

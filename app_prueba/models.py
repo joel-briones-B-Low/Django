@@ -7,7 +7,11 @@ class Persona(models.Model):
     
     def __str__(self):
         return self.nombre
-
+    
+    @classmethod
+    def crear(cls,nombre, apellido):
+        persona = cls(nombre=nombre, apellido=apellido)
+        return persona
 class Usuario(models.Model):
     id_persona = models.ForeignKey(Persona, on_delete=models.CASCADE)
     nombre_usuario = models.CharField(max_length=50, null=False)

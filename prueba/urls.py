@@ -16,8 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from app_prueba.views import index, vista
 urlpatterns = [ 
     path('admin/', admin.site.urls),
-    path('vista/',include('app_prueba.urls')),
+    path('vista/',include('app_prueba.urls'), name='vista'),
+    path('vista/lista/<str:usuario>',index),
+    path('',vista),
+    
     
 ]
